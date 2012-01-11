@@ -47,17 +47,15 @@ table {
   border-spacing: 0;
 }
 
-a {
-  color: $dark-gray;
-
-  &:hover {
-    color: $black;
-  }
-}
-
 body {
   font-family: helvetica, Arial;
   height: 100%;
-  background-color: $top-color !important;
 }
 
+div#todos {
+  div.complete {
+    label {
+      text-decoration: line-through;
+    }
+  }
+}

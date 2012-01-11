@@ -1,8 +1,8 @@
 class CreateTodoItems < ActiveRecord::Migration
   def self.up
     create_table :todo_items do |t|
-      t.string :name
-      t.boolean :complete
+      t.string :description
+      t.boolean :complete, :default => false
 
       t.timestamps
     end

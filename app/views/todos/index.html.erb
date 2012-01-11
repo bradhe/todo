@@ -2,3 +2,14 @@
 <div id="todos">
 
 </div>
+
+<%- content_for(:javascript) do %>
+  <script type="text/javascript">
+    var todos = <%= @todos.to_json.html_safe %>;
+
+    $(function() {
+      var editor = new TodoEditorView(todos);
+      editor.render();
+    });
+  </script>
+<%- end %>

@@ -1,3 +1,5 @@
+require 'sass/plugin'
+
 Sass::Plugin.remove_template_location("./public/stylesheets/sass")
 Sass::Plugin.options.merge!(
     :template_location => 'app/stylesheets',
