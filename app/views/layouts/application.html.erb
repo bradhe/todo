@@ -10,7 +10,13 @@
   <%= javascript_include_tag 'todos' %>
 
   <%= csrf_meta_tag %>
-  <%= stylesheet_link_tag 'todos' %>
+  <%- if mobile? %>
+    <%= stylesheet_link_tag 'todos-mobile' %>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="apple-touch-icon" href="/images/Check.png" />
+  <%- else %>
+    <%= stylesheet_link_tag 'todos' %>
+  <%- end %>
 
 
   <%= yield :javascript %>
