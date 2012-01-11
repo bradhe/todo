@@ -4,3 +4,4 @@ log/*.log
 tmp/
 bin
 *.swp
+.DS_Store
