@@ -7,6 +7,10 @@ CACHE MANIFEST
 <%- end %>
 
 # Stylesheets
-<%- %w{todos todos-mobile}.each do |f| %>
+<%- %w{todos}.each do |f| %>
   <%= stylesheet_path(f) %>
+<%- end %>
+
+<%- if mobile? %>
+  <%= stylesheet_path('todos-mobile') %>
 <%- end %>
