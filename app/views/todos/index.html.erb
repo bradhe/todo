@@ -2,16 +2,23 @@
 
 <h1>Stuff To Do</h1>
 <div id="todos">
+  <div class="empty">Loading items...</div>
 
 </div>
 
 <%- content_for(:javascript) do %>
   <script type="text/javascript">
-    var todos = <%= @todos.to_json.html_safe %>;
+    var createEditor = function(data) {
+      var editor = new TodoEditorView(data);
+      editor.render();
+    };
 
     $(function() {
-      var editor = new TodoEditorView(todos);
-      editor.render();
+      $.ajax({
+        url: '<%= list_todos_path %>.json',
+        type: 'post',
+        success: createEditor
+      });
     });
   </script>
 <%- end %>

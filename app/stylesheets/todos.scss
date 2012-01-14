@@ -73,6 +73,10 @@ div#todos {
       text-decoration: line-through;
     }
   }
+
+  div.empty {
+    font-style: italic;
+  }
 }
 
 div.new.todo {

@@ -76,7 +76,8 @@
 
       $el.append(checkbox);
 
-      var label = $('<label/>').text(this.model.get('description'));
+      var label = $('<label/>');
+      label.text(this.model.get('description'));
       label.attr('for', 'checkbox-'+this.model.id);
 
       $el.append(label);

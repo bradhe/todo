@@ -6,8 +6,8 @@
 <%- end %>
 <head>
   <title>Todo</title>
-  <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js' %>
-  <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js' %>
+  <%= javascript_include_tag 'jquery.min' %>
+  <%= javascript_include_tag 'jquery-ui.min' %>
   <%= javascript_include_tag 'underscore-min' %>
   <%= javascript_include_tag 'backbone-min' %>
   <%= javascript_include_tag 'backbone-patch' %>
@@ -25,11 +25,11 @@
   <%- end %>
 
 
-  <%= yield :javascript %>
 </head>
 <body>
 
 <%= yield %>
 
+  <%= yield :javascript %>
 </body>
 </html>

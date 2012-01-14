@@ -3,6 +3,7 @@ class TodosController < ApplicationController
     @todos = TodoItem.all
     respond_to do |f|
       f.html # index.html
+      f.json { render :json => @todos }
     end
   end
 
@@ -33,4 +34,14 @@ class TodosController < ApplicationController
       f.appcache
     end
   end
+
+  def list
+    @todos = TodoItem.all
+
+    respond_to do |f|
+      f.html # index.html
+      f.json { render :json => @todos.as_json }
+    end
+  end
+
 end
