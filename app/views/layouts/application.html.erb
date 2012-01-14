@@ -16,12 +16,19 @@
   <%= csrf_meta_tag %>
   <%- if mobile? %>
     <%= stylesheet_link_tag 'todos-mobile' %>
+  <%- else %>
+    <%= stylesheet_link_tag 'todos' %>
+  <%- end %>
+
+  <%- if iphone? %>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
     <link rel="apple-touch-icon" href="/images/Check.png" />
-  <%- else %>
-    <%= stylesheet_link_tag 'todos' %>
+  <%- elsif android? %>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%- end %>
 
 
