@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html>
+<%- if include_appcache? %>
+  <html manifest="<%= appcache %>">
+<%- else %>
+  <html>
+<%- end %>
 <head>
   <title>Todo</title>
   <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js' %>

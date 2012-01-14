@@ -1,0 +1,15 @@
+CACHE MANIFEST
+# Version <%= appcache_version %>
+
+https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js
+https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js
+
+# Javascripts
+<%- %w{underscore-min backbone-min backbone-patch todos}.each do |f| %>
+  <%= javascript_path(f) %>
+<%- end %>
+
+# Stylesheets
+<%- %w{todos }.each do |f| %>
+  <%= stylesheet_path(f) %>
+<%- end %>

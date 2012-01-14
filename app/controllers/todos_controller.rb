@@ -1,6 +1,9 @@
 class TodosController < ApplicationController
   def index
     @todos = TodoItem.all
+    respond_to do |f|
+      f.html # index.html
+    end
   end
 
   def create
@@ -20,6 +23,14 @@ class TodosController < ApplicationController
       render :json => @todo.as_json
     else
       render :json => @todo.errors, :status => :unprocessable_entity
+    end
+  end
+
+  def assets
+    @todos = TodoItem.all
+
+    respond_to do |f|
+      f.appcache
     end
   end
 end
