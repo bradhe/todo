@@ -1,5 +1,6 @@
 module ApplicationHelper
   def mobile?
+    iphone? || android?
   end
 
   def iphone?

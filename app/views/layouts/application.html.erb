@@ -14,10 +14,10 @@
   <%= javascript_include_tag 'todos' %>
 
   <%= csrf_meta_tag %>
+
+  <%= stylesheet_link_tag 'todos' %>
   <%- if mobile? %>
     <%= stylesheet_link_tag 'todos-mobile' %>
-  <%- else %>
-    <%= stylesheet_link_tag 'todos' %>
   <%- end %>
 
   <%- if iphone? %>
@@ -30,8 +30,6 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%- end %>
-
-
 </head>
 <body>
 
