@@ -1,6 +1,7 @@
 class TodosController < ApplicationController
   def index
-    @todos = TodoItem.all
+    @todos = TodoItem.all.reject { |todo| (todo.updated_at > 1.day.ago) && todo.complete }
+
     respond_to do |f|
       f.html # index.html
       f.json { render :json => @todos }
